@@ -1,8 +1,8 @@
 # English101 — UI/UX Flow
 
-> Phiên bản: 1.0 · Ngày: 2026-09-28 · Tham chiếu: [PRD](PRD.md) (mã UC, BR) · [Kế hoạch Sprint](SPRINT-PLAN.md) (sprint giao từng màn)
+> Phiên bản: 1.1 · Ngày: 2026-09-28 · Tham chiếu: [PRD](PRD.md) (mã UC, BR) · [Kế hoạch Sprint](SPRINT-PLAN.md) (sprint giao từng màn)
 
-Giữ nguyên mô hình tương tác của Duolingo (lộ trình node, bài học từng câu, phản hồi xanh/đỏ, streak), nhưng dùng thương hiệu, mascot và tài nguyên riêng.
+Mô phỏng UI/UX của Duolingo ở mức rất gần (lộ trình node, bài học từng câu, phản hồi xanh/đỏ, streak, bố cục, hoạt ảnh, tinh thần âm thanh); ranh giới bắt buộc khác biệt chỉ còn thương hiệu và mascot (Mọt thay Duo) — chi tiết và rủi ro ở [PRD §9.2](PRD.md#92-ranh-giới-khi-mô-phỏng-duolingo).
 
 ---
 
@@ -323,7 +323,7 @@ v0.1 có 27 màn hình; cột Sprint cho biết lúc màn đó được giao. Tr
 
 ## 9. Design system
 
-Phong cách "chunky" của Duolingo được giữ bằng môi 3D dưới nút và ô, góc bo lớn, chữ tròn đậm; bảng màu là bảng riêng và mọi cặp chữ/nền đạt tối thiểu 4,5:1. Token nằm trong package `design_system`; widget không được dùng mã màu trực tiếp.
+Phong cách "chunky" của Duolingo được giữ bằng môi 3D dưới nút và ô, góc bo lớn, chữ tròn đậm; bảng màu cùng tông với Duolingo nhưng đổi sắc độ/mã màu ([PRD §9.2](PRD.md#92-ranh-giới-khi-mô-phỏng-duolingo)), và mọi cặp chữ/nền vẫn phải đạt tối thiểu 4,5:1. Token nằm trong package `design_system`; widget không được dùng mã màu trực tiếp.
 
 ### Màu
 

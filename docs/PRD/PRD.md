@@ -1,6 +1,6 @@
 # English101 — Product Requirements Document (PRD)
 
-> Phiên bản: 1.0 · Ngày: 2026-09-28 · Trạng thái: bản nháp chờ chủ dự án chốt các câu hỏi ở mục 11
+> Phiên bản: 1.1 · Ngày: 2026-09-28 · Trạng thái: bản nháp chờ chủ dự án chốt các câu hỏi ở mục 11
 > Bản chia sẻ/bình luận được: Claude Doc "English101 PRD" (https://claude.ai/code/artifact/37ea600d-49e0-445c-a89c-5c47a7a9e41c)
 > Tài liệu liên quan: [UI/UX Flow](UI-UX-FLOWS.md) · [Kế hoạch Sprint](SPRINT-PLAN.md) · [Kiến trúc](../spec/ARCHITECTURE.md) · [Quy chuẩn code](../spec/CODING-STANDARDS.md)
 
@@ -487,16 +487,21 @@ App là công cụ, không phải nhà phân phối nội dung: người học t
 
 ### 9.2 Ranh giới khi mô phỏng Duolingo
 
-Sao chép mẫu tương tác là chấp nhận được; sao chép tài sản thương hiệu thì không.
+Quyết định 2026-09-28: English101 chủ động mô phỏng bố cục, luồng màn hình, tương tác và tinh thần âm thanh của Duolingo ở mức rất gần — không dừng ở mượn cơ chế game hóa như bản trước. Ranh giới không đổi là **nhận diện thương hiệu**, và "giống" luôn có nghĩa là tự làm lại theo phong cách tương tự — không bao giờ lấy nguyên file/asset gốc của Duolingo (lấy nguyên file là vi phạm bản quyền trực tiếp, không phải vùng xám trade dress).
 
 | Được dùng | Không dùng |
 | --- | --- |
-| Lộ trình node, bài học từng câu, nút KIỂM TRA, dải phản hồi, streak, tim, nhiệm vụ, rương | Tên, logo, cú Duo và các nhân vật khác |
-| Bố cục và luồng màn hình tương tự | Font Feather Bold, hình minh họa, âm thanh, bảng màu nhận diện giống hệt |
-| Cơ chế game hóa phổ biến: XP, streak, huy hiệu | Ảnh chụp màn hình Duolingo trong store hay tài liệu marketing; từ khóa "Duolingo" trong mô tả app |
-| Tinh thần microcopy vui, ngắn | Sao chép nguyên văn câu chữ của Duolingo |
+| Lộ trình node, bài học từng câu, nút KIỂM TRA, dải phản hồi, streak, tim, nhiệm vụ, rương | Tên "Duolingo", logo, nhân vật Duo và các nhân vật khác của Duolingo |
+| Bố cục, luồng màn hình, tương tác, hoạt ảnh **gần như giống hệt** | Ảnh chụp màn hình Duolingo trong store hay tài liệu marketing; từ khóa "Duolingo" trong mô tả app |
+| Bảng màu cùng tông xanh/vàng/đỏ như Duolingo, chỉ cần đổi sắc độ hoặc mã màu, không cần khác hẳn | Dùng đúng mã màu nhận diện của Duolingo hoặc font Feather Bold nguyên bản |
+| Tinh thần âm thanh tương tự (chuông đúng/sai, nhạc ăn mừng, tiếng xu) | Dùng trực tiếp file âm thanh hoặc hình minh họa gốc của Duolingo |
+| Cơ chế game hóa phổ biến: XP, streak, huy hiệu; tinh thần microcopy vui, ngắn | Sao chép nguyên văn câu chữ của Duolingo |
 
-Thay thế: tên mã English101, mascot "Mọt" (con mọt sách), font Nunito (SIL OFL), icon Material Symbols Rounded (Apache-2.0), âm thanh tự làm hoặc CC0.
+Yếu tố nhận diện riêng bắt buộc giữ khác biệt: mascot **"Mọt"** (con mọt sách, đeo kính, ba lô — theo hướng concept chủ dự án cung cấp) thay cho Duo. Vì bố cục, màu và âm thanh giờ rất gần Duolingo, mascot riêng gánh phần lớn trách nhiệm chống nhầm lẫn thương hiệu — xem rủi ro R3 cập nhật ở mục 10.
+
+**Rủi ro cần biết (không phải tư vấn pháp lý):** bản quyền phần mềm nhìn chung không bảo hộ bố cục/luồng UI mang tính chức năng, nên sao chép mẫu tương tác thường an toàn; nhưng luật nhãn hiệu có khái niệm "trade dress" có thể bảo hộ tổng thể giao diện nếu nó đủ đặc trưng để gây nhầm lẫn nguồn gốc sản phẩm với người dùng. Giữ UI gần như 100% cộng âm thanh tương tự làm tăng rủi ro này so với phương án trước, dù mascot vẫn khác. Vẫn bắt buộc hỏi luật sư sở hữu trí tuệ trước khi lên store công khai, đặc biệt nếu app có thu phí hoặc quảng cáo.
+
+Thay thế bắt buộc giữ nguyên: tên mã English101, mascot "Mọt", icon Material Symbols Rounded (Apache-2.0). Font vẫn là Nunito (SIL OFL) — chưa đổi vì chủ dự án chưa yêu cầu và Feather Bold không có giấy phép mở để dùng lại; âm thanh vẫn tự làm hoặc CC0, chỉ đổi hướng sáng tác cho gần tinh thần Duolingo hơn chứ không tái sử dụng file gốc.
 
 ### 9.3 Giấy phép mã nguồn và dữ liệu
 
@@ -524,7 +529,7 @@ Ba rủi ro lớn nhất là chất lượng tách PDF, phình phạm vi và nă
 | --- | --- | --- | --- | --- |
 | R1 | PDF bố cục phức tạp (2 cột, ô bài tập) làm tách unit và tách câu sai | Cao | Cao | Spike ở S0; ưu tiên outline; trình đọc reflow; wizard duyệt cấu trúc ở S9; đo tỷ lệ thành công trên bộ fixture |
 | R2 | Khiếu nại bản quyền từ nhà xuất bản | Thấp | Cao | Mô hình tự mang sách; repo không chứa nội dung; không dùng tên sách để quảng bá; quy trình gỡ bỏ; hỏi luật sư trước khi lên store |
-| R3 | Bị coi là sao chép trade dress của Duolingo | Trung bình | Trung bình | Thương hiệu, mascot, bảng màu, font riêng; không nhắc Duolingo trong store listing |
+| R3 | Bị coi là sao chép trade dress của Duolingo | Trung bình→Cao (tăng từ 2026-09-28: UI, màu, âm thanh mô phỏng rất gần, xem [§9.2](#92-ranh-giới-khi-mô-phỏng-duolingo)) | Trung bình | Tên, logo, mascot riêng (Mọt) là ranh giới nhận diện còn lại; không dùng file gốc của Duolingo; không nhắc Duolingo trong store listing; hỏi luật sư trước khi lên store |
 | R4 | Phình phạm vi | Cao | Cao | MoSCoW; cut line mỗi sprint; ý tưởng mới vào backlog v0.2 |
 | R5 | Một người làm nên dễ quá tải hoặc bỏ dở | Cao | Cao | Giả định 20 giờ/tuần; tuần đệm dịp Tết; quy tắc "học 1 bài trước khi code"; tự dùng app từ S3 |
 | R6 | Bài tập rule-based kém tự nhiên với một số sách | Trung bình | Trung bình | Cổng chất lượng BR-PATH-07; nút Báo câu hỏi lỗi; AI làm giàu ở v0.2 |
